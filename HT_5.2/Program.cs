@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace HT.HomeTask_Persons
+namespace Test
 {
     class Program
     {
@@ -13,11 +14,11 @@ namespace HT.HomeTask_Persons
 
             Console.WriteLine("Please, enter Person2 data: name, date of birth (dd/MM/yyyy)");
             Person person2 = new Person();
-            person2.Input(); 
+            person2.Input();
 
-            Console.WriteLine("Please, enter Person3 data: name, date of birth (dd/MM/yyyy)");
-            Person person3 = new Person(); 
-            person3.Input(); 
+            Console.WriteLine("Please, enter Person2 data: name, date of birth (dd/MM/yyyy)");
+            Person person3 = new Person();
+            person3.Input();
 
             Console.WriteLine("Please, enter Person4 data: name, date of birth (dd/MM/yyyy)");
             Person person4 = new Person();
@@ -52,7 +53,6 @@ namespace HT.HomeTask_Persons
             person5.Output();
             person6.Output();
 
-
             List<string> names = new List<string>() { };
             names.Add(person1.Name);
             names.Add(person2.Name);
@@ -63,25 +63,23 @@ namespace HT.HomeTask_Persons
 
             List<string> equalNames = new List<string>() { };
 
-            
-            foreach (var item in names)
+            foreach (var n in names.GroupBy(n => n).Select(n => n.ToList()))
             {
-                int n = 0; 
-                if (names[n] == names[n+1])
+                int index = 1;
+                foreach (var item in n)
                 {
-                    equalNames.Add(names[n]);
-                    equalNames.Add(names[n+1]);
+                    equalNames.Add(string.Format("{0}[{1}]", item, index++));
                 }
-                n++;
             }
 
-            Console.WriteLine($"The Following Persons have the same names:"); 
+            Console.WriteLine($"The Following Persons have the same names:");
             foreach (string name in equalNames)
             {
                 Console.WriteLine(name);
             }
 
             Console.ReadLine();
+
         }
     }
 }
