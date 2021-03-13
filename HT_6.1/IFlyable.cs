@@ -3,7 +3,6 @@ namespace Test
 {
     public interface IFlyable
     {
-        void Fly();
-        void Input();
+        void Fly(bool a);
     }
 }

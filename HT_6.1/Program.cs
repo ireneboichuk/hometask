@@ -1,31 +1,16 @@
 using System;
+using System.Collections.Generic;
 
 namespace Test
 {
     public class Bird : IFlyable
     {
-        public string Name;
-        public bool CanFly;
+        public string Name { get; set; }
+        public bool CanFly { get; set; }
 
-        public Bird()
+        void IFlyable.Fly(bool a)
         {
-        }
-
-        public Bird(string name, bool canFly)
-        {
-            Name = name;
-            CanFly = canFly;
-        }
-
-        public void Input()
-        {
-            Name = Console.ReadLine();
-            CanFly = Convert.ToBoolean(Console.ReadLine());
-        }
-
-
-        void IFlyable.Fly()
-        {
+            CanFly = a;
             if (CanFly == true)
             {
                 Console.WriteLine($"The {Name} bird is able to fly");
@@ -40,28 +25,12 @@ namespace Test
     class Plane : IFlyable
     {
         public string Mark;
-        public int HighFly;
+        public bool HighFly;
 
-        public Plane()
+        void IFlyable.Fly(bool b)
         {
-        }
-
-        public Plane(string mark, int highFly)
-        {
-            Mark = mark;
-            HighFly = highFly;
-        }
-
-        public void Input()
-        {
-            Mark = Console.ReadLine();
-            HighFly = Convert.ToInt32(Console.ReadLine());
-        }
-
-
-        void IFlyable.Fly()
-        {
-            if (HighFly > 0)
+            HighFly = b;
+            if (HighFly == true)
             {
                 Console.WriteLine($"The {Mark} plane flies");
             }
@@ -76,27 +45,16 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            List<IFlyable> objects = new List<IFlyable>(4);
+            objects.Add(new Bird() { Name = "Owl" });
+            objects.Add(new Bird() { Name = "Penquin" });
+            objects.Add(new Plane() { Mark = "Boeing"});
+            objects.Add(new Plane() { Mark = "Aerobus" });
 
-            Console.WriteLine("Please, enter the Bird1 data: name; ability to fly (true or false value)");
-            IFlyable bird1 = new Bird();
-            bird1.Input();
-
-            Console.WriteLine("Please, enter the Bird1 data: name; ability to fly (true or false value)");
-            IFlyable bird2 = new Bird();
-            bird2.Input();
-
-            Console.WriteLine("Please, enter the Plane1 data: name; flight altitude (meters)");
-            IFlyable plane1 = new Plane();
-            plane1.Input();
-
-            Console.WriteLine("Please, enter the Plane2 data: name; flight altitude (meters)");
-            IFlyable plane2 = new Plane();
-            plane2.Input();
-
-            bird1.Fly();
-            bird2.Fly();
-            plane1.Fly();
-            plane2.Fly();
+            objects[0].Fly(true);
+            objects[1].Fly(false);
+            objects[2].Fly(true);
+            objects[3].Fly(true);
 
             Console.ReadLine();
         }
