@@ -7,15 +7,16 @@ namespace Test
         static void Main(string[] args)
         {
             Console.WriteLine("Type two double numbers: ");
-            double a = Convert.ToDouble(Console.ReadLine());
-            double b = Convert.ToDouble(Console.ReadLine());
 
             try
             {
-                double result1 = Div(a, b);
+                decimal a = Convert.ToDecimal(Console.ReadLine());
+                decimal b = Convert.ToDecimal(Console.ReadLine());
+
+                decimal result1 = Div(a, b);
                 Console.WriteLine(result1);
             }
-            catch (DivideByZeroException) when (b == 0)
+            catch (DivideByZeroException)
             {
                 Console.WriteLine("Action failed! DivideByZeroException");
             }
@@ -40,9 +41,9 @@ namespace Test
             Console.ReadLine();
         }
 
-        static double Div(double firstNumber, double secondNumber)
+        static decimal Div(decimal firstNumber, decimal secondNumber)
         {
-            double result = firstNumber / secondNumber;
+            decimal result = firstNumber / secondNumber;
             return result;
         }
     }
