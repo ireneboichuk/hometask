@@ -9,26 +9,28 @@ namespace Test
         {
             try
             {
-                string path = "/Users/mac/Desktop/data.txt";
+                string path = "/Users/mac/Desktop/phones.txt";
                 string writePath = "/Users/mac/Desktop/rez.txt";
                 string writePath2 = "/Users/mac/Desktop/rez2.txt";
 
+                // Перший спосіб записати дані у файл
                 using (StreamReader sr = new StreamReader(path))
                 {
-                    using (StreamWriter sw = new StreamWriter(writePath2, false, System.Text.Encoding.Default))
+                    using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
                     {
-                        // Перший спосіб записати дані у файл
-                        Console.WriteLine(sr.ReadToEnd());
-                        string readText = File.ReadAllText(path);
-
-                        File.WriteAllText(writePath, readText);
-
-
-                        // Другий спосіб записати дані у файл
-                        sw.Write(sr.ReadToEnd());
-                        sw.Close();
+                        string line;
+                        while((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine(line);
+                        }
                     }
                 }
+
+                // Другий спосіб записати дані у файл
+                string readText = File.ReadAllText(path);
+                File.WriteAllText(writePath2, readText);
+
+                Console.WriteLine("Робота з файлами завершена");
             }
             catch (Exception e)
             {
