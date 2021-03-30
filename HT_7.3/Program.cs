@@ -1,6 +1,12 @@
 using System;
 using System.IO;
 
+/*
+7.3.
+Write into file ‘DirectoryC.txt’ information (name, type, size) about all directories and files 
+from disc C on your computer. Catch appropriative exceptions.
+*/
+
 namespace Test
 {
     class Program

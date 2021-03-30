@@ -1,6 +1,13 @@
 using System;
 using System.Collections.Generic;
 
+/*
+6.3.
+Create interface IDeveloper with property Tool, methods Create() and Destroy()
+Create two classes Programmer (with field language) and Builder (with field tool), which implement this interface.
+Create List of IDeveloper and add some Programmers and Builders to it. Call Create() and Destroy() methods, property Tool for all of it 
+*/
+
 namespace Test
 {
     public class Programmer : IDeveloper

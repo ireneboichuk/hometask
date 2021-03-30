@@ -1,6 +1,12 @@
 using System;
 using System.IO;
 
+/*
+7.4.
+Select from directory D only .txt files and print the text from it into console. 
+Catch appropriative exceptions.
+*/
+
 namespace Test
 {
     class Program

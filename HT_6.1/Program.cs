@@ -1,6 +1,13 @@
 using System;
 using System.Collections.Generic;
 
+/*
+6.1.
+Develop interface IFlyable with method Fly().
+Create two classes Bird (with fields: name and canFly) and Plane  (with fields: mark and highFly) , which implement interface IFlyable.
+Create List of IFlyable objects and add some Birds and Planes to it. Call Fly() method for every item from the list of it. 
+*/
+
 namespace Test
 {
     public class Bird : IFlyable

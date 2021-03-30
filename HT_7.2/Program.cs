@@ -1,6 +1,13 @@
 using System;
 using System.IO;
 
+/*
+7.2.
+Read and write all data in task1 from data.txt into rez.txt files, by using (Catch appropriative exceptions):
+- StreamReader StreamWriter
+- File.WriteAllText
+*/
+
 namespace Test
 {
     class Program

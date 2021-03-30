@@ -1,6 +1,13 @@
 using System;
 using System.Collections.Generic;
 
+/*
+6.4.
+Create Console Application project in VS. In the Main() method declare Dictionary<uint,string>. 
+Add to Dictionary from Console seven pairs (ID, Name) of some persons. Ask user to enter ID, 
+then find and write corresponding Name from your Dictionary. If you can't find this ID - say about it to user. 
+*/
+
 namespace Test
 {
 
