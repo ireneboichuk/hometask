@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-/* 8.1
+/* 8.2
 1) Create abstract class Shape with field name and property Name. 
    Add constructor with 1 parameter and abstract methods Area() and Perimeter(), which can return area and perimeter of shape; 
 2) Create classes Circle, Square derived from Shape with field radius (for Circle) and side (for Square).
